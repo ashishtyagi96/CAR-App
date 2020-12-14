@@ -27,12 +27,12 @@ class CarFilters extends React.Component {
 
     }
 
-    handleChange(tag, checked) {
+    handleChange (tag, checked) {
         const selected = checked ? [tag] : [];
         this.setState({ selectedTags: selected });
         let showCompany = true;
         let showModel = true;
-        if(selected.length==0){
+        if(selected.length === 0){
             showCompany=false;
             showModel=false;
             this.setState({selectedCompanyTags:[],searchOn:'year_of_make',search_input:''})
@@ -53,7 +53,7 @@ class CarFilters extends React.Component {
         const selected = checked ? [tag] : [];
         this.setState({ selectedCompanyTags: selected });
         let showModel = true;
-        if(selected.length==0){
+        if(selected.length === 0){
             showModel=false;
             this.setState({searchOn:'companies',search_input:''})
         }else{
@@ -77,16 +77,16 @@ class CarFilters extends React.Component {
 
     onSearch = (value) => {
         const { searchOn, selectedTags, selectedCompanyTags } = this.state;
-        if(searchOn == 'year_of_make'){
+        if(searchOn === 'year_of_make'){
             const { fetchAllCarsYearOfMake } = this.props;
             fetchAllCarsYearOfMake(value);
-        }else if(searchOn == 'companies'){
+        }else if(searchOn === 'companies'){
             const { fetchAllCarsCompanies } = this.props;
             fetchAllCarsCompanies({
                 year_of_make: selectedTags[0],
                 company:value
             });
-        }else if(searchOn == 'models'){
+        }else if(searchOn === 'models'){
             const { fetchAllCarsModels } = this.props;
             fetchAllCarsModels({
                 year_of_make: selectedTags[0],
@@ -99,16 +99,16 @@ class CarFilters extends React.Component {
         const { searchOn, selectedTags, selectedCompanyTags } = this.state;
         let search = event.target.value;
         this.setState({search_input:search});
-        if(searchOn == 'year_of_make'){
+        if(searchOn === 'year_of_make'){
             const { fetchAllCarsYearOfMake } = this.props;
             fetchAllCarsYearOfMake(search);
-        }else if(searchOn == 'companies'){
+        }else if(searchOn === 'companies'){
             const { fetchAllCarsCompanies } = this.props;
             fetchAllCarsCompanies({
                 year_of_make: selectedTags[0],
                 company:search
             });
-        }else if(searchOn == 'models'){
+        }else if(searchOn === 'models'){
             const { fetchAllCarsModels } = this.props;
             fetchAllCarsModels({
                 year_of_make: selectedTags[0],
@@ -117,9 +117,9 @@ class CarFilters extends React.Component {
             });
         }
     };
+
     showCar = (car_id) => {
         const { history } = this.props;
-        const { location: { pathname = "" } = {} } = history;
         history.push( PATH.CARS + '/' +car_id);
     }
 
@@ -132,7 +132,8 @@ class CarFilters extends React.Component {
         let year_data = [];
         let company_data = [];
         let model_data = [];
-        const { selectedTags, showCompany, showModel, selectedCompanyTags, selectedModelTags, search_input = '' } = this.state;
+
+        const { selectedTags, showCompany, showModel, selectedCompanyTags, search_input = '' } = this.state;
         Object.keys(years).map(function(key) {
             year_data.push(years[key]);
         });
@@ -166,11 +167,11 @@ class CarFilters extends React.Component {
                                         checked={selectedTags.indexOf(item) > -1}
                                         onChange={checked => this.handleChange(item, checked)}
                                     >
-                                        <span style={{cursor:'pointer'}}>{item}</span>
+                                        <span style={{cursor:'pointer',fontSize:'16px'}}>{item}</span>
                                     </CheckableTag>
                             </List.Item>
                             }
-                        style={{  width:'100%',margin: '10px 0 0 10px',overflow: 'auto',height: '80vh'}}
+                        style={{  width:'100%',margin: '10px 0 0 10px',overflow: 'auto',height: '80vh',backgroundColor:'#E8EFF1'}}
                     />
                     </Col>
                     <Col span={8}>
@@ -186,11 +187,11 @@ class CarFilters extends React.Component {
                                         checked={selectedCompanyTags.indexOf(item) > -1}
                                         onChange={checked => this.handleChangeCompany(item, checked)}
                                     >
-                                        <span style={{cursor:'pointer'}}>{item}</span>
+                                        <span style={{cursor:'pointer',fontSize:'16px'}}>{item}</span>
                                     </CheckableTag>
                             </List.Item>
                             }
-                        style={{margin: '42px 0',overflow: 'auto',height: '80vh'}}
+                        style={{margin: '42px 0',overflow: 'auto',height: '80vh',backgroundColor:'#E8EFF1'}}
                         hidden={!showCompany}
                     />
                     </Col>
@@ -204,7 +205,7 @@ class CarFilters extends React.Component {
                                 item => <List.Item>
                                         <Card
                                             onClick={()=>this.showCar(item.id)}
-                                            style={{ width: 300, margin: 'auto', cursor: 'pointer' }}
+                                            style={{ width: 300, margin: 'auto', cursor: 'pointer',backgroundColor:'#8CB1B7',border:'2px solid #8CB1B7'}}
                                             cover={
                                             <img
                                                 alt="example"
@@ -249,7 +250,7 @@ class CarFilters extends React.Component {
                                         </Card>
                                 </List.Item>
                             }
-                            style={{margin: '42px 0',overflow: 'auto',height: '80vh'}}
+                            style={{margin: '42px 0',overflow: 'auto',height: '80vh',backgroundColor:'#E8EFF1'}}
                             hidden={!showModel}
                         />
                     </Col>

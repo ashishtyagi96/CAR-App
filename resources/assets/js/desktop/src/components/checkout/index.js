@@ -1,6 +1,6 @@
 import React from "react";
-import { ElementsConsumer, CardElement,CardCvcElement,CardNumberElement, CardExpiryElement } from "@stripe/react-stripe-js";
-import {  Row, Col, message,Button, Input } from "antd";
+import { ElementsConsumer, CardCvcElement, CardNumberElement, CardExpiryElement } from "@stripe/react-stripe-js";
+import {  Row, Col, message, Button } from "antd";
 import { getPaymentUrl } from "../../helpers/url/payments";
 import { xFetch } from "../../helpers/xhrHelpers";
 import CardSection from "../card-section";
@@ -35,6 +35,7 @@ class CheckoutForm extends React.Component {
             window.location.href=PATH.HOME;
         } else if (status === false) {
             message.error('Payment Unsuccessful.');
+            this.setState({buttonLoading:false,button_text:'Buy Now'});
         }
 
     }
@@ -54,7 +55,6 @@ class CheckoutForm extends React.Component {
       message.error(result.error.message);
       this.setState({buttonLoading:false,button_text:'Buy Now'});
     } else {
-      console.log(result.token);
       let token = result.token;
       const { email_id = ''} =this.state;
       this.doPayment({email_id,token});
@@ -70,9 +70,9 @@ class CheckoutForm extends React.Component {
       <div>
         <form>
           <CardSection email_id={email_id} handleChange={this.handleChange}/>
-          <Row style={{paddingTop:'30px',textAlign:'center'}}>
+          <Row style={{paddingTop:'10px',textAlign:'center'}}>
             <Col span={24}>
-            <Button disabled={!this.props.stripe} type={"primary"} onClick={this.handleSubmit} loading={buttonLoading}>
+            <Button disabled={!this.props.stripe} type={"primary"} onClick={this.handleSubmit} loading={buttonLoading} className={'buy-button'}>
                 Buy Now
             </Button>                                
             </Col>                              

@@ -1,4 +1,4 @@
-import React, { Component, lazy, Suspense } from "react";
+import React, { Component, Suspense } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./stylesheets/App.less";
 import Loading from "./components/common/IndefiniteLoader";

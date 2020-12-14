@@ -11,10 +11,6 @@ export const FETCHING_ALL_CARS_COMPANIES_COMPLETED_WITH_ERROR =
 
 export const fetchAllCarsCompanies = (query) => {
     let response = {};
-    const {
-        year_of_make=0,
-        company=''
-    } = query;
     const url = getAllCarsCompaniesrl();
     return async dispatch => {
         try {

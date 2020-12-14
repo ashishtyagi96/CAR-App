@@ -1,6 +1,6 @@
 import React from "react";
-import { CardElement,CardNumberElement, CardExpiryElement, CardCvcElement } from "@stripe/react-stripe-js";
-import { Spin, Row, Col, Card,Progress, Input } from "antd";
+import { CardNumberElement, CardExpiryElement, CardCvcElement } from "@stripe/react-stripe-js";
+import { Row, Col, Input } from "antd";
 
 const CARD_ELEMENT_OPTIONS = {
   style: {
@@ -35,7 +35,7 @@ class CardSection extends React.Component  {
     this.props.handleChange(value);
   }
  render() {
-  const { email_id = '' } = this.props;
+  const { email_id = '' } = this.state;
   return (
     <>
         <Row>
@@ -45,10 +45,10 @@ class CardSection extends React.Component  {
         </Row>
         <Row>
             <Col span={24}>
-            <Input type={'email'} autoComplete={"off"} value={this.state.email_id} onChange={this.handleChange} required></Input>
+            <Input type={'email'} autoComplete={"off"} value={email_id} onChange={this.handleChange} required></Input>
             </Col>
         </Row>
-        <Row style={{paddingTop:'30px'}}>
+        <Row style={{paddingTop:'20px'}}>
           <h6 style={{color:'#8CB1B7'}}>CARD NUMBER</h6>
         </Row>
             <Row>
@@ -56,7 +56,7 @@ class CardSection extends React.Component  {
                   <CardNumberElement options={CARD_ELEMENT_OPTIONS}/>
                 </Col>                              
             </Row>
-            <Row style={{paddingTop:'30px'}}>
+            <Row style={{paddingTop:'20px'}}>
                 <h6 style={{color:'#8CB1B7'}}>EXPIRATION DATE</h6>
             </Row>
             <Row>
@@ -64,7 +64,7 @@ class CardSection extends React.Component  {
                   <CardExpiryElement/>
                 </Col>                              
             </Row>
-            <Row style={{paddingTop:'30px'}}>
+            <Row style={{paddingTop:'20px'}}>
                 <h6 style={{color:'#8CB1B7'}}>CVV</h6>
             </Row>
             <Row>

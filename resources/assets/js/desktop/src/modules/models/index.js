@@ -11,10 +11,6 @@ export const FETCHING_ALL_CARS_MODELS_COMPLETED_WITH_ERROR =
 
 export const fetchAllCarsModels = (query) => {
     let response = {};
-    const {
-        year_of_make=0,
-        company=''
-    } = query;
     const url = getAllCarsModelsrl();
     return async dispatch => {
         try {

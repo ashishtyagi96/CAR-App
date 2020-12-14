@@ -1,23 +1,17 @@
-import React, { Component, Fragment } from "react";
-import { Spin, Row, Col, Card,Progress, Input } from "antd";
-import { LineOutlined } from '@ant-design/icons';
+import React, { Component } from "react";
+import { Spin, Card,Progress } from "antd";
+import { CloseOutlined } from '@ant-design/icons';
 import { numberFormat } from "../../../helpers/numberFormatter";
 import car from "../../../assets/images/car.png";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "../../checkout";
+import { PATH } from "../../../constant";
 const stripePromise = loadStripe("pk_test_51HxrOtJw9Rw8Ooy9Klh9WH3iMznp1E0PrMsEBM1zns26Qm0qoTT7fun8KWiFnnk9AQ7kEHpuzIr3bmuU73wKIVyK0059G9cgkS");
-
-
-
-const { Meta } = Card;
-
 
 class Cars extends Component {
     constructor(props) {
         super(props);
-        // this.state = {stripe: window.Stripe('test_key')};
-
         this.state = {
             stripe:window.Stripe('pk_test_51HxrOtJw9Rw8Ooy9Klh9WH3iMznp1E0PrMsEBM1zns26Qm0qoTT7fun8KWiFnnk9AQ7kEHpuzIr3bmuU73wKIVyK0059G9cgkS'),
             loading: true,
@@ -49,12 +43,14 @@ class Cars extends Component {
         return <Spin></Spin>;
     }
 
+    returnToHome = () => {
+        window.location.href=PATH.HOME;
+    }
 
     render() {
 
         const {
-            car_details,
-            match
+            car_details
         } = this.props;
         const { loading } = this.state;
         if (loading) {
@@ -62,7 +58,6 @@ class Cars extends Component {
         }
         const { model = '' , company = '' , is_available = false , amount = 0 , year_of_make = 1990 } = car_details;
         const  tax = (amount*(18))/100;
-        console.log(amount,tax);
         return (
             <div  style={{backgroundColor:'#CBDCDF',height:'100vh', padding:'70px 0 0 0'}}>
                 <div style={{width:'85vw',margin:'auto',paddingLeft:'20px'}}>
@@ -76,12 +71,14 @@ class Cars extends Component {
                         bordered={false}
                     >
                     </Card>
+                    <div style={{float:'right',borderRadius:'100%',height:'20px',width:'20px',cursor:'pointer'}} title={'BACK'} onClick={this.returnToHome}>
+                        <CloseOutlined style={{fontSize:'30px',position:'absolute',marginTop:'-16px',padding:'5px',borderRadius:'100%',backgroundColor:'#CBDCDF'}}/>
+                    </div>
                     <div style={{height:'85vh',backgroundColor:'#FFFFFF',width:'25vw',top:'-12.5vh',position:'relative',float:'right',marginRight:'15vh',boxShadow:'0 35px 50px -30px rgba(0, 0, 0, 0.2)'}}>
                         <div style={{height:'12.5vh',backgroundColor:'#E8EFF1'}}>
                             <h2 style={{color:'#8CB1B7',textAlign:'center',padding:'40px 0 0 0',letterSpacing:'5px'}}>CARD DETAILS</h2>
                         </div>
-
-                        <div style={{height:'60vh',backgroundColor:'#FFFFFF',padding:'30px 0 0 0', margin:'20px'}}>
+                        <div style={{height:'56vh',backgroundColor:'#FFFFFF',padding:'30px 0 0 0', margin:'20px'}}>
                         <Elements stripe={stripePromise}>
                             <CheckoutForm stripe={this.state.stripe} total={amount+tax}/>
                         </Elements>
