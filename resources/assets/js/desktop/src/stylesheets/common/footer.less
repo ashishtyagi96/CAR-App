@@ -1,0 +1,28 @@
+@import "../variables.less";
+
+.client-customer-footer {
+    &.ant-layout-footer {
+        background-color: white;
+        position: fixed;
+        bottom: 0;
+        width: calc(100vw - 264px);
+        border-top: 1px solid rgba(112, 112, 112, 0.16);
+    }
+
+    &.settings {
+        &.ant-layout-footer {
+            width: calc(100vw - 280px);
+        }
+    }
+}
+
+.danger-footer {
+    &.ant-layout-footer {
+        padding: 24px 28px;
+    }
+    & > .danger-btn {
+        &.ant-btn {
+            padding: 0;
+        }
+    }
+}

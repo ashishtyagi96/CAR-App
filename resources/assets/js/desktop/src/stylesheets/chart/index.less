@@ -1,0 +1,51 @@
+.chart {
+    border-radius: 3px;
+    border: solid 1px @white-ten;
+    margin: 16px;
+
+    svg.donut-chart {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .title {
+        height: 40px;
+        border-radius: 3px;
+        border-bottom: solid 1px @white-ten;
+    }
+
+    text.inner-circle {
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+    .arc {
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.75;
+        }
+
+        text {
+            font-weight: 300;
+            font-size: 18px;
+            color: #fff;
+        }
+    }
+
+    .bar {
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+
+    svg.bar-chart {
+        .tick line {
+            stroke: #9faaae;
+            stroke-dasharray: 4 4 4 4;
+            stroke-opacity: 0.2;
+        }
+    }
+}

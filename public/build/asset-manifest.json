@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/build/static/css/main.883132eb.chunk.css",
+    "main.js": "/build/static/js/main.40bfeb6c.chunk.js",
+    "main.js.map": "/build/static/js/main.40bfeb6c.chunk.js.map",
+    "runtime-main.js": "/build/static/js/runtime-main.c9cd978f.js",
+    "runtime-main.js.map": "/build/static/js/runtime-main.c9cd978f.js.map",
+    "static/css/2.de424728.chunk.css": "/build/static/css/2.de424728.chunk.css",
+    "static/js/2.c533300b.chunk.js": "/build/static/js/2.c533300b.chunk.js",
+    "static/js/2.c533300b.chunk.js.map": "/build/static/js/2.c533300b.chunk.js.map",
+    "index.html": "/build/index.html",
+    "precache-manifest.63f936cc0a37d77c0bfee1751e4320be.js": "/build/precache-manifest.63f936cc0a37d77c0bfee1751e4320be.js",
+    "service-worker.js": "/build/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/build/static/css/2.de424728.chunk.css.map",
+    "static/css/main.883132eb.chunk.css.map": "/build/static/css/main.883132eb.chunk.css.map",
+    "static/js/2.c533300b.chunk.js.LICENSE.txt": "/build/static/js/2.c533300b.chunk.js.LICENSE.txt",
+    "static/media/App.less": "/build/static/media/AvenirNext-Regular.1f1c6c50.ttf",
+    "static/media/pay.png": "/build/static/media/pay.63e32956.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c9cd978f.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.c533300b.chunk.js",
+    "static/css/main.883132eb.chunk.css",
+    "static/js/main.40bfeb6c.chunk.js"
+  ]
+}

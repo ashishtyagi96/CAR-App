@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20">
+    <defs>
+        <style>
+            .cls-1,.cls-2,.cls-4{fill:none}.cls-1,.cls-2{stroke:#fff}.cls-2{stroke-linecap:round}.cls-3{stroke:none}
+        </style>
+    </defs>
+    <g id="Group_319" data-name="Group 319" transform="translate(-8272.5 -9143)">
+        <path id="Line_47" d="M0 0h21" class="cls-1" data-name="Line 47" transform="translate(8272.5 9162.5)"/>
+        <g id="Rectangle_605" class="cls-1" data-name="Rectangle 605" transform="translate(8274 9143)">
+            <rect width="10" height="20" class="cls-3" rx="1"/>
+            <rect width="9" height="19" x=".5" y=".5" class="cls-4" rx=".5"/>
+        </g>
+        <g id="Rectangle_606" class="cls-1" data-name="Rectangle 606" transform="translate(8285 9152)">
+            <rect width="7" height="11" class="cls-3" rx="1"/>
+            <rect width="6" height="10" x=".5" y=".5" class="cls-4" rx=".5"/>
+        </g>
+        <path id="Line_48" d="M0 0h2" class="cls-2" data-name="Line 48" transform="translate(8276.5 9146.5)"/>
+        <path id="Line_55" d="M0 0h2" class="cls-2" data-name="Line 55" transform="translate(8287.5 9155.5)"/>
+        <path id="Line_56" d="M0 0h2" class="cls-2" data-name="Line 56" transform="translate(8287.5 9158.5)"/>
+        <path id="Line_50" d="M0 0h4.919" class="cls-2" data-name="Line 50" transform="translate(8276.5 9149.5)"/>
+        <path id="Line_51" d="M0 0h4.919" class="cls-2" data-name="Line 51" transform="translate(8276.5 9152.5)"/>
+        <path id="Line_53" d="M0 0h4.919" class="cls-2" data-name="Line 53" transform="translate(8276.5 9155.5)"/>
+        <path id="Line_54" d="M0 0h4.919" class="cls-2" data-name="Line 54" transform="translate(8276.5 9158.5)"/>
+    </g>
+</svg>

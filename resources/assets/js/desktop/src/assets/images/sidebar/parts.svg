@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21">
+    <defs>
+        <style>
+            .cls-1,.cls-3{fill:none}.cls-1{stroke:#fff}.cls-2{stroke:none}
+        </style>
+    </defs>
+    <g id="Group_320" data-name="Group 320" transform="translate(1762 -4195)">
+        <g id="Rectangle_617" class="cls-1" data-name="Rectangle 617" transform="translate(-1762 4195)">
+            <rect width="16" height="21" class="cls-2" rx="1"/>
+            <rect width="15" height="20" x=".5" y=".5" class="cls-3" rx=".5"/>
+        </g>
+        <g id="Rectangle_618" class="cls-1" data-name="Rectangle 618" transform="translate(-1757 4199)">
+            <rect width="6" height="13" class="cls-2" rx="1"/>
+            <rect width="5" height="12" x=".5" y=".5" class="cls-3" rx=".5"/>
+        </g>
+        <path id="Line_58" d="M0 0h5" class="cls-1" data-name="Line 58" transform="translate(-1756.5 4207.5)"/>
+    </g>
+</svg>

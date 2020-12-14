@@ -1,0 +1,30 @@
+.assets {
+    margin-left: 64px;
+    .header {
+        height: 64px;
+        border-bottom: solid 1px rgba(112, 112, 112, 0.16);
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        .search_box {
+            width: 240px;
+        }
+    }
+
+    .content-wrapper {
+        background-color: @white-five;
+        height: calc(100vh - 64px);
+        .empty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .circle {
+                width: 60px;
+                height: 60px;
+                background-color: @white-four;
+            }
+        }
+    }
+}

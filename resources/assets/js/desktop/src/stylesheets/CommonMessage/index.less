@@ -1,0 +1,32 @@
+.success-msg {
+    @keyframes hide-animation {
+        0% {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    .dashboard-success-msg {
+        top: 65px;
+        bottom: 0px;
+        left: 265px;
+    }
+    .iqvia-successful-msg {
+        animation: hide-animation 10s ease-out 0s;
+        animation-fill-mode: forwards;
+        position: fixed;
+        top: 130px;
+        left: 0;
+        height: 40px;
+        right: 0;
+        background-color: rgba(227, 243, 223, 0.5);
+    }
+    .iqvia-successful-msg.top60 {
+        top: 60px !important;
+    }
+}
