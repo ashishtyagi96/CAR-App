@@ -8,7 +8,7 @@ export const HOST = path
 export const PATH = {
     ROOT: "/",
     HOME: "/home",
-    CARS: "/cars"
+    CARS: "/car"
 };
 
 export const REQUEST_TYPE = {

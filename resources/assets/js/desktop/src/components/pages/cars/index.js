@@ -59,7 +59,7 @@ class Cars extends Component {
         const { model = '' , company = '' , is_available = false , amount = 0 , year_of_make = 1990 } = car_details;
         const  tax = (amount*(18))/100;
         return (
-            <div  style={{backgroundColor:'#CBDCDF',height:'100vh', padding:'70px 0 0 0'}}>
+            <div  style={{backgroundColor:'#CBDCDF',minHeight:'100vh'}}>
                 <div style={{width:'85vw',margin:'auto',paddingLeft:'20px'}}>
                     <p style={{color:'#8CB1B7',fontSize:'13px'}}>YOU ARE PURCHASING</p>
                     <h3 style={{color:'#73686C'}}>{company+` `+model+` , manufactured in `+ year_of_make}</h3>
@@ -78,13 +78,13 @@ class Cars extends Component {
                         <div style={{height:'12.5vh',backgroundColor:'#E8EFF1'}}>
                             <h2 style={{color:'#8CB1B7',textAlign:'center',padding:'40px 0 0 0',letterSpacing:'5px'}}>CARD DETAILS</h2>
                         </div>
-                        <div style={{height:'56vh',backgroundColor:'#FFFFFF',padding:'30px 0 0 0', margin:'20px'}}>
+                        <div style={{height:'60vh',backgroundColor:'#FFFFFF',padding:'10px 0 0 0', margin:'0 20px'}}>
                         <Elements stripe={stripePromise}>
                             <CheckoutForm stripe={this.state.stripe} total={amount+tax}/>
                         </Elements>
                         </div>
                         <div style={{height:'12.5vh',backgroundColor:'#8CB1B7',cursor:'pointer'}}>
-                            <h2 style={{color:'#FFFFFF',textAlign:'center',padding:'40px 0 0 0',letterSpacing:'5px'}}>PURCHASE</h2>
+                            <h2 style={{color:'#FFFFFF',textAlign:'center',padding:'20px 0 0 0',letterSpacing:'5px'}}>PURCHASE</h2>
                             <p style={{color:'#FFFFFF',textAlign:'center'}}>({(numberFormat(amount+tax))})</p>
                         </div>
                     </div>
